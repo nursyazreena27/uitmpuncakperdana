@@ -1,0 +1,44 @@
+.title {
+  font-family: "Oswald", serif;
+  font-weight: 700;
+  font-style: 35px;
+  text-transform: uppercase;
+  color: transparent;
+  background: linear-gradient(
+    135deg, #FFFFFF #ee82ee #6a5acd 
+  );
+  background-size: 500px 100%;
+  background-clip: text;
+}
+
+.title footer {
+  font-family: "Oswald", serif;
+  font-weight: 700;
+  font-style: 25px;
+  text-transform: uppercase;
+  text-align: justify;
+  color: transparent;
+  background: linear-gradient(
+    135deg, #FFFFFF #ee82ee #6a5acd 
+  );
+  background-size: 500px 100%;
+  background-clip: text;
+}
+
+.justify {
+  text-align: justify;
+}
+
+
+/* Modify the background color */
+
+.navbar-custom {
+  background-color: lightgreen;
+}
+
+/* Modify brand and text color */
+
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+  color: green;
+}

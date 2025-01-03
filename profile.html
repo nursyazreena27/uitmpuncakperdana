@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bo</title>
+        <!-- bootstrap CSS CDN -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+        <!-- google font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    
+         <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- style.css -->
+     <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+
+    <!-- header -->
+<div class="container my-4">
+    <div class="title">UiTM Puncak Perdana</div>
+</div>
+<div class="text-center">
+  <img src="image/logo.png" alt="logo" width="150" height="70">
+</div>
+
+      </head>
+  <body>
+
+    <div class="container my-4">
+        <div class="title">UiTM Puncak Perdana</div>
+    </div>
+        <!-- navigation -->
+        <nav class="navbar navbar-expand-lg bg-primary">
+            <div class="container">
+              <img src="image/logo.png" alt="UiTM logo" width="50px">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="login.html">Login</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="form.html">Form</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact Us</a>
+                  </li>
+                </ul>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="darkModeToggle" />
+                    <label class="form-check-label" for="darkModeToggle" id="themeLabel">Dark Mode</label>
+                </div>
+              </div>
+            </div>
+          </nav>
+      
+        <!-- bootstrap js CDN -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+        <!-- darkmode script -->
+         <script>
+            function setTheme(theme){
+                document.documentElement.setAttribute("data-bs-theme", theme);
+                localStorage.setItem("theme",theme);
+                document.getElementById("themeLabel").innerText = theme === "dark" ? "Dark Mode On" : "Dark Mode Off";
+            }
+    
+            document
+                .getElementById("darkModeToggle")
+                .addEventListener("change", function (event) { 
+                    if (event.target.checked) {
+                        setTheme("dark");
+                    } else {
+                        setTheme ("");
+                    }
+                });
+    
+                window.onload = function () {
+                    let savedTheme = localStorage.getItem("theme");
+                    if(savedTheme) {
+                        setTheme(savedTheme);
+                        if (savedTheme === "dark") {
+                            document.getElementById("darkModeToggle").checked = true;
+                        }
+                    }
+                }
+         </script>
+
+        <pre>  </pre>
+        <div class="container">
+            <form class="row g-3">
+                <div class="col-10">
+                  <label for="inputId" class="form-label">Student ID</label>
+                  <input type="email" class="form-control" id="inputId" placeholder="2024525177">
+                </div>
+                <div class="col-10">
+                  <label for="inputName" class="form-label">Name</label>
+                  <input type="password" class="form-control" id="inputName" placeholder="AHMAD ARSYAD BIN ALI">
+                </div>
+                <div class="col-10">
+                  <label for="inputDate" class="form-label">DATE OF BIRTH</label>
+                  <input type="text" class="form-control" id="inputDate" placeholder="24/01/2003">
+                </div>
+                <div class="col-10">
+                    <label for="inputCode" class="form-label">Code Programme</label>
+                    <select id="inputCode" class="form-select">
+                      <option selected>Code Programme</option>
+                      <option>CDIM260-Bachelor of Information Science (Hons) Library Management</option>
+                      <option>CDIM261-Bachelor of Information Science (Hons) Records Management</option>
+                      <option>CDIM262-Bachelor of Information Science (Hons) Information Systems Management</option>
+                      <option>CDIM263-Bachelor of Information Science (Hons) Information Content Management</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                  <label for="inputPhoneNumber" class="form-label">Phone Number</label>
+                  <input type="text" class="form-control" id="inputPhoneNumber" placeholder="019-3774040">
+                </div>
+                <div class="col-md-7">
+                    <label for="inputEmail4" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="inputEmail4" placeholder="ahmadasyraf@gmail.com"> 
+                </div>
+                <div class="col-10">
+                    <label for="inputAdvisor" class="form-label">Advisor</label>
+                    <select id="inputCode" class="form-select">
+                      <option selected>Advisor</option>
+                      <option>AMZARI BIN ABU BAKAR</option>
+                      <option>ASYRAF BIN WAHI ANUAR</option>
+                      <option>IRWAN KAMARUDDIN BIN ABD KADIR</option>
+                      <option>KHAIRUL MIZAN BIN TAIB</option>
+                      <option>MOHD RIDWAN BIN SEMAN @ KAMARULZAMAN</option>
+                      <option>MOHD YUSOF BIN MUSTAFFAR</option>
+                      <option>NORIZAN BINTI ANWAR</option>
+                    </select>
+                </div>
+                <div class="input-group col-10">
+                    <input type="file" class="form-control" id="inputGroupFile02">
+                    <label class="input-group-text" for="inputGroupFile02">Upload Profile Picture</label>
+                  </div>
+                <div class="col-10">
+                  <button type="submit" class="btn btn-primary">Update</button>
+                </div>
+              </form>
+        </div>
+
+        <pre>  </pre>
+        
+        <!-- footer -->
+     <footer class="footer mt-auto py-3 bg-primary">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h6>OUR PHILOSOPHY</h6>
+            <p class="justify">Every individual has the ability to attain excellence through the transfer of knowledge and assimilation of moral values so as to become professional graduates capable of developing knowledge, self, society and nation.</p>
+          </div>
+          <div class="col-md-4">
+            <div class="row">
+            <h6>OUR VISION</h6>
+            <p class="justify">To establish UiTM as a Globally Renowned University of Science, Technology, Humanities and Entrepreneurship.</p>
+            <h6>OUR MISSION</h6>
+            <p class="justify">To lead the development of agile, professional bumiputeras through state-of-the-art curricula and impactful research</p>
+            </div>
+          </div>
+
+              <!-- Grid column -->
+              <div class="col-md-4">
+                <h6 class="text-uppercase mb-4 font-weight-bold">Contact US</h6>
+                <p><i class="fas fa-home mr-3"></i> 
+                  Universiti Teknologi MARA (UiTM)
+                  40450 Shah Alam, Selangor Darul Ehsan
+                  Malaysia</p>
+                  <p><i class="fas fa-phone "></i>Tel:+603-5544 2000</p>
+              </div>
+          </div>
+        </div>
+      </div>
+     </div>
+
+
+    </body>
+
+</html>
